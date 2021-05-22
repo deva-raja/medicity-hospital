@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  page: 0,
+  page: '0',
 };
 
 export const personelPageSlice = createSlice({
@@ -9,7 +9,7 @@ export const personelPageSlice = createSlice({
   initialState,
   reducers: {
     changePage: (state, action) => {
-      state.value = action.payload;
+      state.page = action.payload;
     },
   },
 });

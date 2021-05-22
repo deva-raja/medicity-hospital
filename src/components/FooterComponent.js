@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaFacebookF } from 'react-icons/fa';
+import { FaInstagram } from 'react-icons/fa';
+import { FaTwitter } from 'react-icons/fa';
 
 function FooterComponent() {
   return (
     <footer>
       <div className='social'>
-        <i className='fab fa-facebook-f'></i>
-        <i className='fab fa-instagram'></i>
-        <i className='fab fa-twitter'></i>
+        <FaFacebookF className='fab fa-facebook-f' />
+        <FaInstagram className='fab fa-instagram' />
+        <FaTwitter className='fab fa-twitter' />
       </div>
       <Link className='contact' to='#'>
         contact us

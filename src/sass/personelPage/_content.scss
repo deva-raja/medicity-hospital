@@ -13,17 +13,21 @@
     padding: 10px;
     color: white;
     flex-wrap: wrap;
-    button{
+    padding: 20px;
+    cursor: pointer;
+    button {
       background-color: black;
       color: white;
       outline: none;
       border: 0;
-    }
-  }
-  .sidebar > * {
+      font-size: 16px;
+      text-transform: uppercase;
       cursor: pointer;
-      &:hover{
-          color: $primary-color;
+      letter-spacing: 1.5px;
+      font-weight: 900;
+      &:hover {
+        color: $primary-color;
       }
+    }
   }
 }

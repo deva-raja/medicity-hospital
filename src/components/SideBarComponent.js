@@ -1,14 +1,8 @@
-import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { changePage } from '../redux/personelPageSlice';
 
 function SideBarComponent() {
   const dispatch = useDispatch();
-  const page = useSelector((state) => state.personel.value);
-
-  useEffect(() => {
-    console.log(page);
-  }, [page]);
 
   return (
     <div className='sidebar'>
@@ -16,7 +10,7 @@ function SideBarComponent() {
         className='personel_sidebar_buttons'
         data-page='0'
         onClick={(e) => {
-          dispatch(changePage(Number(e.target.dataset.page)));
+          dispatch(changePage(e.target.dataset.page));
         }}
       >
         Add Doctors
