@@ -1,11 +1,14 @@
-import React from 'react';
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
+
 function PersonelBodyComponent() {
-  const [pages, setPages] = useState(0);
+  const page = useSelector((state) => state.personel.page);
+
   return (
     <div>
-      <p>hel</p>
-      <p>he</p>
+      {page === 0 && <p>page 1</p>}
+      {page === 1 && <p>page 2</p>}
+      {page === 2 && <p>page 3</p>}
+      <p>last tesing</p>
     </div>
   );
 }

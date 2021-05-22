@@ -317,6 +317,13 @@
       flex-wrap: wrap;
 }
 
+.personelPage_showcase .sidebar button {
+  background-color: black;
+  color: white;
+  outline: none;
+  border: 0;
+}
+
 .personelPage_showcase .sidebar > * {
   cursor: pointer;
 }
