@@ -10,6 +10,8 @@ function AddDoctorComponent() {
         <input class='form__input' type='password' placeholder='Password' />
         <input class='form__input' type='text' placeholder='Speciality' />
         <input class='form__input' type='text' placeholder='Phone Number (optional)' />
+        <input class='form__input' type='file' />
+        <input class='form__input' type='text' placeholder='Select Image (optional)' />
         <button class='form__button button submit'>add</button>
       </form>
     </div>
