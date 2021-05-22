@@ -1,15 +1,61 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
-html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+/* header section */
+.landingPage_showcase header {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-grid-column: 1;
+  grid-column: 1/1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 40px 100px;
 }
 
-* {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-  padding: 0;
-  margin: 0;
+.landingPage_showcase header .nav {
+  position: relative;
+  left: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 300px;
+}
+
+.landingPage_showcase header .nav > * {
+  text-transform: capitalize;
+  color: white;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50px;
+          flex: 1 1 50px;
+}
+
+.landingPage_showcase header .nav > *:hover {
+  color: black;
+}
+
+.landingPage_showcase .logo {
+  font-weight: 800;
+  word-spacing: 15px;
+  text-transform: uppercase;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  z-index: 2;
+}
+
+.landingPage_showcase .logo:hover {
+  color: black;
+}
+
+.landingPage_showcase .logo:hover {
+  color: black;
 }
 
 /* body styling */
@@ -46,56 +92,6 @@ html {
   grid-column: 1/1;
 }
 
-/* header section */
-.landingPage_showcase header {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  -ms-grid-column: 1;
-  grid-column: 1/1;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 40px 100px;
-}
-
-.landingPage_showcase header .nav {
-  position: relative;
-  left: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 450px;
-}
-
-.landingPage_showcase header .nav > * {
-  text-transform: capitalize;
-  color: white;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 50px;
-          flex: 1 1 50px;
-}
-
-.landingPage_showcase header .nav > *:hover {
-  color: black;
-}
-
-.landingPage_showcase .logo {
-  font-weight: 800;
-  word-spacing: 15px;
-  text-transform: uppercase;
-  font-size: 24px;
-  cursor: pointer;
-  color: white;
-}
-
 /* content section */
 .landingPage_showcase .content {
   z-index: 10;
@@ -110,6 +106,10 @@ html {
 .landingPage_showcase .content-wrapper {
   position: relative;
   bottom: 50px;
+}
+
+.landingPage_showcase .content-wrapper span {
+  margin-right: 11px;
 }
 
 .landingPage_showcase .cta {
@@ -226,6 +226,175 @@ html {
   color: black;
 }
 
+/* header section */
+.personelPage_showcase header {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-grid-column: 1;
+  grid-column: 1/1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 40px 100px;
+}
+
+.personelPage_showcase header .nav {
+  position: relative;
+  left: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 300px;
+}
+
+.personelPage_showcase header .nav > * {
+  text-transform: capitalize;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50px;
+          flex: 1 1 50px;
+}
+
+.personelPage_showcase header .nav > *:hover {
+  color: #5dbced;
+}
+
+.personelPage_showcase .logo {
+  font-weight: 800;
+  word-spacing: 15px;
+  text-transform: uppercase;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.personelPage_showcase .logo:hover {
+  color: #5dbced;
+}
+
+.personelPage_showcase {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 1fr auto;
+      grid-template-rows: auto 1fr auto;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+.personelPage_showcase .content {
+  color: black;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  -ms-grid-column: 1;
+  grid-column: 1/1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+}
+
+.personelPage_showcase .sidebar {
+  background: #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 10px;
+  color: white;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.personelPage_showcase .sidebar > * {
+  cursor: pointer;
+}
+
+.personelPage_showcase .sidebar > *:hover {
+  color: #5dbced;
+}
+
+.personelPage_showcase footer {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+  -ms-grid-column: 1;
+  grid-column: 1/1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr auto;
+      grid-template-columns: auto 1fr auto;
+  padding: 30px 80px 20px;
+  z-index: 2;
+}
+
+.personelPage_showcase .fab {
+  font-size: 24px;
+}
+
+.personelPage_showcase .fa-facebook-f:hover {
+  color: #4267b2;
+}
+
+.personelPage_showcase .fa-instagram:hover {
+  background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.personelPage_showcase .fa-twitter:hover {
+  color: #5dbced;
+}
+
+.personelPage_showcase .social {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 200px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.personelPage_showcase .contact {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/4;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.personelPage_showcase .contact:hover {
+  color: #5dbced;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+* {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
 .animation {
   display: inline-block;
   -webkit-animation: fadeIn;
@@ -278,5 +447,13 @@ html {
 a {
   text-decoration: none;
   color: black;
+}
+
+li {
+  list-style: none;
+}
+
+.fab:hover {
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

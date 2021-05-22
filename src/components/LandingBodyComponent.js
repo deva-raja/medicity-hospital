@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import video from '../videos/hospital_bg.mp4';
+import img from '../images/doctor_child.png';
 
-function BodyComponent() {
+function LandingBodyComponent() {
   return (
     <>
+      <img className='bg-video' src={img} alt='doctor_child' />
+      {/* <video class='bg-video' src={video} autoPlay loop muted></video> */}
       <div className='content'>
         <div className='content-wrapper'>
           <h2>
@@ -28,4 +32,4 @@ function BodyComponent() {
   );
 }
 
-export default BodyComponent;
+export default LandingBodyComponent;

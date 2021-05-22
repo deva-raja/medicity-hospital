@@ -1,26 +1,8 @@
-.landingPage_showcase {
+.personelPage_showcase {
   width: 100vw;
   height: 100vh;
-  // background: #111;
-  background: url(../images/doctor_child.png);
   background-size: cover;
-  color: #fff;
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 1fr;
-
-  /* background video */
-  .bg-video {
-    grid-row: 1/-1;
-    grid-column: 1/-1;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .content {
-    color: rgb(0, 0, 0);
-    grid-row: 2/3;
-    grid-column: 1/1;
-  }
 }

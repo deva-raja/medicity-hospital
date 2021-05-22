@@ -1,13 +1,17 @@
-import GalleryComponent from '../components/GalleryComponent';
 import HeaderComponent from '../components/HeaderComponent';
-import BodyComponent from '../components/BodyComponent';
 import FooterComponent from '../components/FooterComponent';
+import SideBarComponent from '../components/SideBarComponent';
+import PersonelBodyComponent from '../components/PersonelBodyComponent';
 
 function PersonelPage() {
   return (
     <>
       <div className='personelPage_showcase'>
         <HeaderComponent />
+        <div className='content'>
+          <SideBarComponent />
+          <PersonelBodyComponent />
+        </div>
         <FooterComponent />
       </div>
     </>

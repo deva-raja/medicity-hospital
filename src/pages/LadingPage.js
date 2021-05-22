@@ -1,14 +1,12 @@
-import GalleryComponent from '../components/GalleryComponent';
 import HeaderComponent from '../components/HeaderComponent';
-import BodyComponent from '../components/BodyComponent';
+import LandingBodyComponent from '../components/LandingBodyComponent';
 import FooterComponent from '../components/FooterComponent';
 
 function LadingPage() {
   return (
     <div className='landingPage_showcase'>
-      <GalleryComponent />
       <HeaderComponent />
-      <BodyComponent />
+      <LandingBodyComponent />
       <FooterComponent />
     </div>
   );
