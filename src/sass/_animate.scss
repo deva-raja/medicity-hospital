@@ -1,0 +1,30 @@
+.animation {
+  display: inline-block;
+  animation: fadeIn;
+  animation-duration: 3s;
+}
+.fade-item-1 {
+  animation-delay: 0.285714s;
+}
+.fade-item-2 {
+  animation-delay: 0.671429s;
+}
+.fade-item-3 {
+  animation-delay: 1.157143s;
+}
+.fade-item-4 {
+  animation-delay: 1.84286s;
+}
+.fade-item-5 {
+  animation-delay: 2.22857s;
+}
+.fade-item-6 {
+  animation-delay: 2.61429s;
+}
+.fade-item-7 {
+  animation-delay: 3s;
+}
+.animated-logo{
+  display: inline-block;
+  animation: fadeIn;
+}
