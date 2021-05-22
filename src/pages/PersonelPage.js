@@ -6,7 +6,7 @@ import FooterComponent from '../components/FooterComponent';
 function PersonelPage() {
   return (
     <>
-      <div className='personel_showcase'>
+      <div className='personelPage_showcase'>
         <HeaderComponent />
         <FooterComponent />
       </div>

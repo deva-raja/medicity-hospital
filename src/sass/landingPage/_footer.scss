@@ -1,0 +1,58 @@
+/* footer styling */
+.landingPage_showcase {
+  footer {
+    grid-row: 3/4;
+    grid-column: 1/1;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding: 30px 80px 20px;
+    z-index: 2;
+  }
+  .fab {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.918);
+  }
+  .fa-facebook-f:hover {
+    color: #4267b2;
+  }
+
+  .fa-instagram:hover {
+    background: -webkit-radial-gradient(
+      33% 100% circle,
+      #fed373 4%,
+      #f15245 30%,
+      #d92e7f 62%,
+      #9b36b7 85%,
+      #515ecf
+    );
+    background: radial-gradient(
+      circle at 33% 100%,
+      #fed373 4%,
+      #f15245 30%,
+      #d92e7f 62%,
+      #9b36b7 85%,
+      #515ecf
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .fa-twitter:hover {
+    color: #5dbced;
+  }
+  .social {
+    grid-column: 1/2;
+    display: flex;
+    width: 200px;
+    justify-content: space-around;
+  }
+  .contact {
+    grid-column: 3/4;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .contact:hover {
+    color: black;
+  }
+}

@@ -5,7 +5,7 @@ import FooterComponent from '../components/FooterComponent';
 
 function LadingPage() {
   return (
-    <div className='showcase'>
+    <div className='landingPage_showcase'>
       <GalleryComponent />
       <HeaderComponent />
       <BodyComponent />
