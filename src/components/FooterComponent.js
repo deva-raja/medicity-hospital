@@ -12,7 +12,7 @@ function FooterComponent() {
         <FaInstagram className='fab fa-instagram' />
         <FaTwitter className='fab fa-twitter' />
       </div>
-      <Link className='contact' to='#'>
+      <Link className='contact' to='/contact'>
         contact us
       </Link>
     </footer>

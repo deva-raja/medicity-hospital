@@ -1,0 +1,56 @@
+{
+  "branches": [
+    {
+      "coordinates": [19.165924, 75.311971],
+      "name": "Maharashtra Medicity"
+    },
+    {
+      "coordinates": [17.086191, 77.466697],
+      "name": "Hyderabad Medicity"
+    },
+    {
+      "coordinates": [8.50497, 77.105125],
+      "name": "Thiruvananthapuram Medcity"
+    },
+    {
+      "coordinates": [8.86879, 76.616573],
+      "name": "Kolam Medicity"
+    },
+    {
+      "coordinates": [12.888922, 77.559061],
+      "name": "Banglore Medicity"
+    },
+    {
+      "coordinates": [18.479609, 73.370292],
+      "name": "Mumbai Medicity"
+    },
+    {
+      "coordinates": [21.71868, 82.546039],
+      "name": "Bilsapur Medicity"
+    },
+    {
+      "coordinates": [28.110749, 77.193162],
+      "name": "New Delhi Medicity"
+    },
+    {
+      "coordinates": [26.70636, 73.546848],
+      "name": "Rajasthan Medicity"
+    },
+    {
+      "coordinates": [22.309426, 88.714351],
+      "name": "Kolkata Medicity"
+    },
+    {
+      "coordinates": [12.897489, 80.098784],
+      "name": "Chennai Medicity"
+    },
+    {
+      "coordinates": [11.275387, 75.855197],
+      "name": "Kozhikode Medicity"
+    },
+    {
+      "coordinates": [22.93816, 72.608488],
+      "name": "Ahamadabad Medicity"
+    }
+  ]
+}

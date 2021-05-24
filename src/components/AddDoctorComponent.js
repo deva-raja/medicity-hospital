@@ -58,6 +58,7 @@ function AddDoctorComponent() {
           add
         </button>
       </form>
+      <img src="http://localhost:5000/uploads/download(3).png" alt="blah" />
     </div>
   );
 }

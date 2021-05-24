@@ -1,0 +1,22 @@
+.locationPage_showcase {
+  .content {
+    grid-row: 2/4;
+    grid-column: 1/1;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    text-align: center;
+    h1 {
+      position: relative;
+      bottom: 25px;
+      border-bottom: 3px solid $primary-color;
+      margin: 0 auto;
+      color: $primary-color;
+      cursor: default;
+    }
+  }
+  .leaflet-container {
+    width: 100%;
+    height: 100%;
+  }
+}

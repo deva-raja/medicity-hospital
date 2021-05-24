@@ -2,6 +2,8 @@ import './css/style.css';
 import LandingPage from './pages/LadingPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import PersonelPage from './pages/PersonelPage';
+import LocationPage from './pages/LocationPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
         <Switch>
           <Route exact path='/' component={LandingPage} />
           <Route path='/personel' component={PersonelPage} />
+          <Route path='/locations' component={LocationPage} />
+          <Route path='/contact' component={ContactPage} />
         </Switch>
       </Router>
     </div>
