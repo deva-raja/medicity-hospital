@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CardComponent({ img, data, emailDisplay }) {
+function CardComponent({ img, data }) {
   return (
     <div className='card'>
       <div className='image-wrapper'>
@@ -8,12 +8,10 @@ function CardComponent({ img, data, emailDisplay }) {
       </div>
       <div className='info-wrapper'>
         <div class='card-heading'>
-          <span>{data.name}</span>
-          <span>{emailDisplay && data.email}</span>
-          <span>{data.specilisation}</span>
+          <span>Name - {data.name}</span>
+          <div>Email - {data.email}</div>
         </div>
-        <div class='card-body'>{data.message}</div>
-        <div class='card-contact'>{data.phone}</div>
+        <div class='card-body'>Message - {data.message}</div>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import { getMessage } from '../api/app';
 import CardComponent from './CardComponent';
+import patientImg from '../images/patient_filler.jpg';
 
 Modal.setAppElement('#root');
 function MessageComponent() {
@@ -56,7 +57,7 @@ function MessageComponent() {
       <div className='card-container'>
         {messages &&
           messages.map((message) => (
-            <CardComponent key={message._id} emailDisplay={true} data={message} />
+            <CardComponent key={message._id} data={message} img={patientImg} />
           ))}
       </div>
       {/* <button onClick={() => setModalIsOpen(true)}>Open Modal</button>

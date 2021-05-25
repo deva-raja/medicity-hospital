@@ -1,0 +1,30 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+}
+.card {
+  border: 1px solid #dce0e6;
+  display: flex;
+  .image-wrapper {
+    text-align: center;
+    flex-grow: 1;
+  }
+  .info-wrapper {
+    flex-grow: 100;
+    padding: 40px 48px 0;
+    color: #052049;
+  }
+  .card-heading {
+    font-size: 18px;
+    line-height: 36px;
+    letter-spacing: -0.3px;
+    span {
+      margin-right: 12px;
+    }
+  }
+  specialisation {
+    font-weight: 400;
+  }
+}
