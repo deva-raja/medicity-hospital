@@ -5,7 +5,7 @@ import * as branchData from '../data/medicity-branches.json';
 export default function App() {
   return (
     <div className='content'>
-      <h1>Find Us Anywhere on India</h1>
+      <h1>Find Us Anywhere in India</h1>
       <MapContainer center={[20.593683, 78.962883]} zoom={5}>
         <TileLayer
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'

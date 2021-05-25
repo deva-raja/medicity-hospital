@@ -1,0 +1,33 @@
+.contactPage_showcase {
+  .content {
+    color: rgb(0, 0, 0);
+    grid-row: 2/3;
+    grid-column: 1/1;
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+  .sidebar {
+    background: #000000;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    color: white;
+    flex-wrap: wrap;
+    padding: 20px;
+    cursor: pointer;
+    button {
+      background-color: black;
+      color: white;
+      outline: none;
+      border: 0;
+      font-size: 16px;
+      text-transform: uppercase;
+      cursor: pointer;
+      letter-spacing: 1.5px;
+      font-weight: 900;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}

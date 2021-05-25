@@ -87,3 +87,37 @@ input[type='text'] {
     }
   }
 }
+
+// select test
+select:required:invalid {
+  color: $teritary-color;
+}
+option[value=''][disabled] {
+  display: none;
+}
+option {
+  color: black;
+}
+
+// extra contact info span
+.form__span {
+  position: relative;
+  bottom: 10px;
+  color: $teritary-color;
+}
+
+// text area
+.form__messageArea {
+  max-width: 350px;
+  min-width: 350px;
+  max-height: 220px;
+  min-height: 220px;
+  padding: 10px;
+  resize: none;
+  font-size: 14px !important;
+}
+
+// message button
+.message-button {
+  font-size: 15px;
+}

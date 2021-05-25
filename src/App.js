@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import PersonelPage from './pages/PersonelPage';
 import LocationPage from './pages/LocationPage';
 import ContactPage from './pages/ContactPage';
+import CovidPage from './pages/CovidPage';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path='/' component={LandingPage} />
+          <Route path='/covid' component={CovidPage} />
           <Route path='/personel' component={PersonelPage} />
           <Route path='/locations' component={LocationPage} />
           <Route path='/contact' component={ContactPage} />
