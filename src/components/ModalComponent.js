@@ -1,7 +1,7 @@
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Modal from 'react-modal';
 import { destroyMessage } from '../api/app';
+import { openModal } from '../redux/modalSlice';
 
 const style = {
   overlay: {
@@ -28,25 +28,28 @@ const style = {
   },
 };
 
-function ModalComponent(data) {
+function ModalComponent() {
   const dispatch = useDispatch();
   const open = useSelector((state) => state.modal.open);
+  const data = useSelector((state) => state.modal.data);
 
-  function handleClick(id) {
-    const data = destroyMessage(id);
-    setModalIsOpen(false);
+  async function handleClick(id) {
+    // const destroyedData = await destroyMessage(id);
+    await destroyMessage(id);
+    // console.log(destroyedData);
+    dispatch(destroyMessage());
+    dispatch(openModal(false));
   }
 
-  const [modalIsOpen, setModalIsOpen] = useState(false);
   return (
     <>
-      <Modal style={style} isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
+      <Modal style={style} isOpen={open} onRequestClose={() => dispatch(openModal(false))}>
         <div className='modal-container'>
           <h1 className='modal-heading'>Message</h1>
           <div>From - {data.name}</div>
           <div className='email'>Email id - {data.email}</div>
           <div>Respected Hospital Administrator,</div>
-          <div class='card-body'>Message : {data.message}</div>
+          <div className='card-body'>Message : {data.message}</div>
           <button className='modal-btn' onClick={() => handleClick(data._id)}>
             delete message
           </button>

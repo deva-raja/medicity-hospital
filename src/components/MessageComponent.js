@@ -3,10 +3,12 @@ import Modal from 'react-modal';
 import { getMessage } from '../api/app';
 import CardComponent from './CardComponent';
 import patientImg from '../images/patient_filler.jpg';
+import { useSelector } from 'react-redux';
 
 Modal.setAppElement('#root');
 function MessageComponent() {
   const [messages, setMessages] = useState([]);
+  const deleteMsg = useSelector((state) => state.modal.delete);
 
   useEffect(() => {
     const fetchMessage = async () => {
@@ -18,7 +20,7 @@ function MessageComponent() {
     return () => {
       setMessages();
     };
-  }, []);
+  }, [deleteMsg]);
 
   console.log(messages);
 
