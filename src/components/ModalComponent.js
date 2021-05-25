@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Modal from 'react-modal';
 import { destroyMessage } from '../api/app';
-import { openModal } from '../redux/modalSlice';
+import { deleteMsg, openModal } from '../redux/modalSlice';
 
 const style = {
   overlay: {
@@ -34,11 +34,10 @@ function ModalComponent() {
   const data = useSelector((state) => state.modal.data);
 
   async function handleClick(id) {
-    // const destroyedData = await destroyMessage(id);
-    await destroyMessage(id);
-    // console.log(destroyedData);
-    dispatch(destroyMessage());
-    dispatch(openModal(false));
+    await destroyMessage(id).then(() => {
+      dispatch(deleteMsg());
+      dispatch(openModal(false));
+    });
   }
 
   return (
