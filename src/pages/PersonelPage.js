@@ -6,7 +6,7 @@ import PersonelBodyComponent from '../components/PersonelBodyComponent';
 function PersonelPage() {
   return (
     <>
-      <div className='personelPage_showcase'>
+      <div className='personelPage_showcase defaultPage_showcase'>
         <HeaderComponent />
         <div className='content'>
           <SideBarComponent />

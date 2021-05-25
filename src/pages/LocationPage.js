@@ -5,7 +5,7 @@ import MapComponent from '../components/MapComponent';
 function LocationPage() {
   return (
     <>
-      <div className='locationPage_showcase'>
+      <div className='locationPage_showcase defaultPage_showcase'>
         <HeaderComponent />
         <MapComponent />
         <FooterComponent />

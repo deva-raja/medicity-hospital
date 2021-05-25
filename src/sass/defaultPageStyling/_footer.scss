@@ -1,11 +1,11 @@
-.contactPage_showcase {
+.defaultPage_showcase {
   footer {
     grid-row: 3/4;
     grid-column: 1/1;
     display: grid;
     grid-template-columns: auto 1fr auto;
     padding: 30px 80px 20px;
-    z-index: 2;
+    z-index: 1000;
   }
   .fab {
     font-size: 24px;
