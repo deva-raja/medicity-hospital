@@ -628,9 +628,6 @@ html {
 
 .container {
   background-color: #ecf0f3;
-}
-
-.container .message {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
