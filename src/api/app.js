@@ -19,3 +19,12 @@ export async function sendMessage(message) {
     console.log(error.response.data);
   }
 }
+
+export async function destroyMessage(id) {
+  try {
+    const response = await axios.get(`${url}/message/destroy`, { id });
+    return response.data;
+  } catch (error) {
+    console.log(error.response.data);
+  }
+}
