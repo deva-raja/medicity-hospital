@@ -1,0 +1,10 @@
+.defaultPage_showcase {
+  .content {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
+  }
+  .form-error {
+    color: $error;
+  }
+}

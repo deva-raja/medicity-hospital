@@ -15,7 +15,6 @@ export default function App() {
           <Marker key={index} position={[branch.coordinates[0], branch.coordinates[1]]}>
             <Popup className='map-popup'>
               {branch.name}
-              {/* {branch.name} <br /> Easily customizable. */}
             </Popup>
           </Marker>
         ))}

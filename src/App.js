@@ -5,6 +5,7 @@ import PersonelPage from './pages/PersonelPage';
 import LocationPage from './pages/LocationPage';
 import ContactPage from './pages/ContactPage';
 import CovidPage from './pages/CovidPage';
+import AppointmentPage from './pages/AppointmentPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='/personel' component={PersonelPage} />
           <Route path='/locations' component={LocationPage} />
           <Route path='/contact' component={ContactPage} />
+          <Route path='/appointment' component={AppointmentPage} />
         </Switch>
       </Router>
     </div>

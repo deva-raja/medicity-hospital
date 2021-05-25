@@ -1,14 +1,13 @@
 import HeaderComponent from '../components/HeaderComponent';
 import FooterComponent from '../components/FooterComponent';
-import ContactBodyComponent from '../components/ContactBodyComponent';
 
-function ContactPage() {
+function AppointmentPage() {
   return (
     <>
-      <div className='appointmentPage_showcase defaultPage_showcase'>
+      <div className='contactPage_showcase defaultPage_showcase'>
         <HeaderComponent />
         <div className='content'>
-          <ContactBodyComponent />
+            appointment
         </div>
         <FooterComponent />
       </div>
@@ -16,4 +15,4 @@ function ContactPage() {
   );
 }
 
-export default ContactPage;
+export default AppointmentPage;
