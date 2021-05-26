@@ -2,6 +2,7 @@ import { Field, Form, Formik } from 'formik';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import * as Yup from 'yup';
 import { sendMessage } from '../api/messageApi';
 import { messageToast } from '../redux/toastSlice';
@@ -33,10 +34,21 @@ function AddDoctorComponent() {
     phoneNumber: '',
   };
 
-  const onSubmit = async (values, { setSubmitting }) => {
+  // sidebar popup toast
+  const openToast = () => {
+    toast.info(' Doctor added to database ', {
+      className: 'toast',
+      autoClose: 2500,
+      hideProgressBar: true,
+    });
+  };
+
+  const onSubmit = async (values, { setSubmitting, resetForm }) => {
     setSubmitting(true);
     // const data = await sendMessage(values);
     console.log(values);
+    openToast();
+    // resetForm();
     // if (data.data) {
     //   setSubmitting(false);
     //   dispatch(messageToast(true));
@@ -103,6 +115,7 @@ function AddDoctorComponent() {
           </Form>
         )}
       </Formik>
+      <ToastContainer />
     </div>
   );
 }

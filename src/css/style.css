@@ -850,6 +850,11 @@ option {
   padding: 16px;
 }
 
+.toast {
+  background-color: #4b70e2 !important;
+  color: white;
+}
+
 a {
   text-decoration: none;
   color: black;
