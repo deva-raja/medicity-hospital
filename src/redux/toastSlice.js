@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { toast } from 'react-toastify';
 
 const initialState = {
   message: false,
@@ -10,7 +9,7 @@ export const toastSlice = createSlice({
   initialState,
   reducers: {
     messageToast: (state, action) => {
-      toast('hello', { autoClose: 2000, hideProgressBar: true });
+      state.message = action.payload;
     },
   },
 });
