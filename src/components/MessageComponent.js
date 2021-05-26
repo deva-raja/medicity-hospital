@@ -22,8 +22,6 @@ function MessageComponent() {
     };
   }, [deleteMsg]);
 
-  console.log(messages);
-
   return (
     <div className='container'>
       <div className='message'>

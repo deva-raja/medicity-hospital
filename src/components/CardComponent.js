@@ -1,14 +1,18 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { getData, openModal } from '../redux/modalSlice';
+import { useDispatch } from 'react-redux';
 import ModalComponent from '../components/ModalComponent';
+import { getData, openModal } from '../redux/modalSlice';
 
 function CardComponent({ img, data }) {
   const dispatch = useDispatch();
-  dispatch(getData(data));
+
+  const handleClick = () => {
+    dispatch(openModal(true));
+    dispatch(getData(data));
+  };
 
   return (
     <>
-      <div className='card' onClick={() => dispatch(openModal(true))}>
+      <div className='card' onClick={() => handleClick()}>
         <div className='image-wrapper'>
           <img src={img} alt='' />
         </div>

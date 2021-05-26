@@ -18,7 +18,6 @@ export default function App() {
             </Popup>
           </Marker>
         ))}
-        console.log(activeBranch);
       </MapContainer>
     </div>
   );
