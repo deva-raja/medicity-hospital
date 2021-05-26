@@ -3,9 +3,13 @@ import React, { useState } from 'react';
 import * as Yup from 'yup';
 import { sendMessage } from '../api/app';
 import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import messageToast from '../redux/toastSlice';
 
 function ContactBodyComponent() {
-  const history = useHistory()
+  const dispatch = useDispatch();
+
+  const history = useHistory();
   const [serverError, setServerError] = useState();
 
   const MessageSchema = Yup.object().shape({
@@ -20,10 +24,12 @@ function ContactBodyComponent() {
     message: '',
   };
 
-  const onSubmit = async (values, { setSubmitting, resetForm }) => {
+  const onSubmit = async (values, { setSubmitting }) => {
     setSubmitting(true);
     const data = await sendMessage(values);
     if (data.data) {
+      console.log('it wor');
+      dispatch(messageToast());
       history.push('/');
       return setSubmitting(false);
     }

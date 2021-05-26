@@ -13,7 +13,7 @@ function MessageComponent() {
   useEffect(() => {
     const fetchMessage = async () => {
       const data = await getMessage();
-      setMessages(data);
+      setMessages(data.message);
     };
     fetchMessage();
 
@@ -21,6 +21,7 @@ function MessageComponent() {
       setMessages();
     };
   }, [deleteMsg]);
+  console.log(messages);
 
   return (
     <div className='container'>

@@ -6,6 +6,7 @@ import LocationPage from './pages/LocationPage';
 import ContactPage from './pages/ContactPage';
 import CovidPage from './pages/CovidPage';
 import AppointmentPage from './pages/AppointmentPage';
+import { toast } from 'react-toastify';
 
 function App() {
   return (
