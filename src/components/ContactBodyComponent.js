@@ -1,12 +1,17 @@
 import { Field, Form, Formik } from 'formik';
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
 import { sendMessage } from '../api/app';
-import { useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import messageToast from '../redux/toastSlice';
 
 function ContactBodyComponent() {
+  const handleClick = () => {
+    dispatch(messageToast());
+  };
+
+  
   const dispatch = useDispatch();
 
   const history = useHistory();
@@ -28,9 +33,9 @@ function ContactBodyComponent() {
     setSubmitting(true);
     const data = await sendMessage(values);
     if (data.data) {
-      console.log('it wor');
-      dispatch(messageToast());
+      console.log('it works');
       history.push('/');
+      dispatch(messageToast());
       return setSubmitting(false);
     }
     if (data.error) {
@@ -75,6 +80,7 @@ function ContactBodyComponent() {
           </Form>
         )}
       </Formik>
+      <button onClick={handleClick}>Notify !</button>
     </div>
   );
 }

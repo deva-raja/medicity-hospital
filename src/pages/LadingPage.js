@@ -1,17 +1,17 @@
 import { useDispatch } from 'react-redux';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import FooterComponent from '../components/FooterComponent';
 import HeaderComponent from '../components/HeaderComponent';
 import LandingBodyComponent from '../components/LandingBodyComponent';
-import ToastComponent from '../components/ToastComponent';
 import { messageToast } from '../redux/toastSlice';
 
 toast.configure();
 function LadingPage() {
-  const disptach = useDispatch();
+  const dispatch = useDispatch();
 
   const handleClick = () => {
-    disptach(messageToast());
+    dispatch(messageToast());
   };
 
   return (
@@ -19,7 +19,7 @@ function LadingPage() {
       <HeaderComponent />
       <LandingBodyComponent />
       <FooterComponent />
-      <ToastComponent />
+      <ToastContainer />
       <button onClick={handleClick}>Notify !</button>
     </div>
   );
