@@ -1,9 +1,13 @@
 import { Field, Form, Formik } from 'formik';
-import React from 'react';
+import React, { useState } from 'react';
 import * as Yup from 'yup';
 import { sendMessage } from '../api/app';
+import { useHistory } from 'react-router-dom';
 
 function ContactBodyComponent() {
+  const history = useHistory()
+  const [serverError, setServerError] = useState();
+
   const MessageSchema = Yup.object().shape({
     name: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
     message: Yup.string().min(2, 'Too Short!').max(120, 'Too Long!').required('Required'),
@@ -16,11 +20,17 @@ function ContactBodyComponent() {
     message: '',
   };
 
-  const onSubmit = (values, { setSubmitting, resetForm }) => {
+  const onSubmit = async (values, { setSubmitting, resetForm }) => {
     setSubmitting(true);
-    sendMessage(values);
-    setSubmitting(false);
-    // resetForm();
+    const data = await sendMessage(values);
+    if (data.data) {
+      history.push('/');
+      return setSubmitting(false);
+    }
+    if (data.error) {
+      setServerError(data);
+      return setSubmitting(false);
+    }
   };
 
   const CustomInputComponent = (props) => (
@@ -41,6 +51,9 @@ function ContactBodyComponent() {
             <Field className='form__input' name='name' placeholder='Name' />
             {touched.name && errors.name && <div className='form-error'>{errors.name}</div>}
             <Field className='form__input' name='email' placeholder='Email' />
+            {serverError && serverError.error && (
+              <div className='form-error'>{serverError.error}</div>
+            )}
             {touched.email && errors.email && <div className='form-error'>{errors.email}</div>}
             <Field name='message' as={CustomInputComponent} />
             {touched.message && errors.message && (

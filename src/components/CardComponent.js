@@ -24,7 +24,7 @@ function CardComponent({ img, data }) {
           <div className='card-body'>Message - {data.message}</div>
         </div>
       </div>
-      <ModalComponent data={data} />
+      <ModalComponent />
     </>
   );
 }

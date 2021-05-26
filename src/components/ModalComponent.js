@@ -40,7 +40,6 @@ function ModalComponent() {
     });
     console.log(deletedMsg);
   }
-  console.log(data);
 
   return (
     <>

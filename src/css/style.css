@@ -835,7 +835,7 @@ option {
   text-transform: uppercase;
 }
 
-.modal-container button {
+.modal-container .modal-btn {
   background-color: #4b70e2;
   margin-top: 20px;
   text-transform: uppercase;
@@ -844,6 +844,10 @@ option {
   font-weight: 600;
   border-radius: 999px;
   cursor: pointer;
+}
+
+.modal-container .modal-btn:hover {
+  padding: 16px;
 }
 
 a {
