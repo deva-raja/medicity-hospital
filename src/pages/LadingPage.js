@@ -7,7 +7,6 @@ import LandingBodyComponent from '../components/LandingBodyComponent';
 import { messageToast } from '../redux/toastSlice';
 import 'react-toastify/dist/ReactToastify.css';
 
-toast.configure();
 function LadingPage() {
   const messageSent = useSelector((state) => state.toast.message);
   const dispatch = useDispatch();

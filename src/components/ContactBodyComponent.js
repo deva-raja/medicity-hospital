@@ -2,7 +2,6 @@ import { Field, Form, Formik } from 'formik';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
 import * as Yup from 'yup';
 import { sendMessage } from '../api/app';
 import { messageToast } from '../redux/toastSlice';
@@ -30,10 +29,9 @@ function ContactBodyComponent() {
     setSubmitting(true);
     const data = await sendMessage(values);
     if (data.data) {
-      console.log('it works');
+      setSubmitting(false);
       dispatch(messageToast(true));
-      history.push('/');
-      return setSubmitting(false);
+      return history.push('/');
     }
     if (data.error) {
       setServerError(data);
