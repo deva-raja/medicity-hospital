@@ -3,7 +3,7 @@ import './css/style.css';
 import AppointmentPage from './pages/AppointmentPage';
 import ContactPage from './pages/ContactPage';
 import CovidPage from './pages/CovidPage';
-import LandingPage from './pages/LadingPage';
+import LandingPage from './pages/LandingPage';
 import LocationPage from './pages/LocationPage';
 import PersonelPage from './pages/PersonelPage';
 

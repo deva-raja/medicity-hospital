@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
-import { sendMessage } from '../api/app';
+import { sendMessage } from '../api/messageApi';
 import { messageToast } from '../redux/toastSlice';
 
 function ContactBodyComponent() {

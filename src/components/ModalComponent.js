@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Modal from 'react-modal';
-import { destroyMessage } from '../api/app';
+import { destroyMessage } from '../api/messageApi';
 import { deleteMsg, openModal } from '../redux/modalSlice';
 
 const style = {

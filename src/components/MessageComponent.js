@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Modal from 'react-modal';
-import { getMessage } from '../api/app';
+import { getMessage } from '../api/messageApi';
 import CardComponent from './CardComponent';
 import patientImg from '../images/patient_filler.jpg';
 import { useSelector } from 'react-redux';
@@ -16,7 +16,7 @@ function MessageComponent() {
       setMessages(data.message);
     };
     fetchMessage();
-
+ 
     return () => {
       setMessages();
     };
