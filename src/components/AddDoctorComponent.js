@@ -1,21 +1,14 @@
 import { Field, Form, Formik } from 'formik';
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import * as Yup from 'yup';
-import { sendMessage } from '../api/messageApi';
-import { messageToast } from '../redux/toastSlice';
+import { createDoctor } from '../api/doctorApi';
 
 function AddDoctorComponent() {
-  const history = useHistory();
-
-  const dispatch = useDispatch();
-
   const [serverError, setServerError] = useState();
 
   const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
-  const MessageSchema = Yup.object().shape({
+  const createDoctorSchema = Yup.object().shape({
     name: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
     password: Yup.string().min(2, 'Too Short!').max(120, 'Too Long!').required('Required'),
@@ -37,7 +30,7 @@ function AddDoctorComponent() {
   // sidebar popup toast
   const openToast = () => {
     toast.info(' Doctor added to database ', {
-      className: 'toast',
+      className: 'toast-info',
       autoClose: 2500,
       hideProgressBar: true,
     });
@@ -45,40 +38,37 @@ function AddDoctorComponent() {
 
   const onSubmit = async (values, { setSubmitting, resetForm }) => {
     setSubmitting(true);
-    // const data = await sendMessage(values);
-    console.log(values);
-    openToast();
-    // resetForm();
-    // if (data.data) {
-    //   setSubmitting(false);
-    //   dispatch(messageToast(true));
-    //   return history.push('/');
-    // }
-    // if (data.error) {
-    //   setServerError(data);
-    //   return setSubmitting(false);
-    // }
+    const data = await createDoctor(values);
+
+    if (data.data) {
+      openToast();
+      setSubmitting(false);
+      return resetForm();
+    }
+
+    if (data.error) {
+      setServerError(data);
+      return setSubmitting(false);
+    }
   };
 
   const CustomInputComponent = (props) => (
-    <select
-      {...props}
-      className='form__input'
-      name='speciality'
-      defaultValue=''
-      value={props.values.speciality}
-    >
+    <Field {...props} as='select' className='form__input'>
       <option className='form__input' value='' label='Speciality' disabled />
       <option className='form__input' value='cardiology' label='Cardiology' />
       <option className='form__input' value='dermatology' label='Dermatology' />
       <option className='form__input' value='vaccination' label='Vaccination' />
       <option className='form__input' value='neuorology' label='Neuorology' />
-    </select>
+    </Field>
   );
 
   return (
     <div className='container'>
-      <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={MessageSchema}>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={onSubmit}
+        validationSchema={createDoctorSchema}
+      >
         {({ errors, touched, isSubmitting, values }) => (
           <Form className='form' id='a-form'>
             <h2 className='form_title title'>add doctor</h2>
@@ -97,7 +87,11 @@ function AddDoctorComponent() {
               <div className='form-error'>{errors.password}</div>
             )}
 
-            <Field name='speciality' values={values} as={CustomInputComponent} />
+            <Field
+              name='speciality'
+              values={values}
+              as={CustomInputComponent}
+            />
             {touched.speciality && errors.speciality && (
               <div className='form-error'>{errors.speciality}</div>
             )}

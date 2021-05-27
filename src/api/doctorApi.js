@@ -29,15 +29,16 @@ export async function logoutDoctor() {
   }
 }
 
-export async function createDoctor(message) {
+// admin part
+export async function createDoctor(doctor) {
   try {
-    const response = await axios.post(`${url}/doctor/create`, message);
+    const response = await axios.post(`${url}/doctor/create`, doctor);
     const data = response.data;
-    if (data.message) {
-      return { data: response.data.message };
+    if (data.doctor) {
+      return { data: data.doctor };
     }
     if (data.errors) {
-      const error = response.data.errors.errorMsg;
+      const error = data.errors.email;
       return { error };
     }
   } catch (error) {
@@ -45,10 +46,17 @@ export async function createDoctor(message) {
   }
 }
 
-export async function destroyDoctor(id) {
+export async function destroyDoctor(doctor) {
   try {
-    const response = await axios.get(`${url}/doctor/destroy`, { id });
-    return response.data;
+    const response = await axios.post(`${url}/doctor/destroy`, doctor);
+    const data = response.data;
+    if (data.doctor) {
+      return { data: data.doctor };
+    }
+    if (data.errors) {
+      const error = data.errors;
+      return { error };
+    }
   } catch (error) {
     console.log(error.message);
   }

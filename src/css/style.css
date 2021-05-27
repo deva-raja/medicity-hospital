@@ -852,8 +852,13 @@ option {
   padding: 16px;
 }
 
-.toast {
+.toast-info {
   background-color: #4b70e2 !important;
+  color: white;
+}
+
+.toast-error {
+  background-color: #f13c20 !important;
   color: white;
 }
 

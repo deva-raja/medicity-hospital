@@ -1,4 +1,9 @@
-.toast {
+.toast-info {
   background-color: $primary-color !important;
+  color: white;
+}
+
+.toast-error {
+  background-color: $error !important;
   color: white;
 }

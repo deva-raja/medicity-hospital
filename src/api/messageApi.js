@@ -16,10 +16,10 @@ export async function sendMessage(message) {
     const response = await axios.post(`${url}/message/create`, message);
     const data = response.data;
     if (data.message) {
-      return { data: response.data.message };
+      return { data: data.message };
     }
     if (data.errors) {
-      const error = response.data.errors.errorMsg;
+      const error = data.errors.errorMsg;
       return { error };
     }
   } catch (error) {
