@@ -13,6 +13,7 @@ function MessageComponent() {
   useEffect(() => {
     const fetchMessage = async () => {
       const data = await getMessage();
+      console.log(data);
       setMessages(data.message);
     };
     fetchMessage();

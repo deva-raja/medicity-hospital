@@ -61,8 +61,14 @@ function AddDoctorComponent() {
   };
 
   const CustomInputComponent = (props) => (
-    <select {...props} className='form__input' name='speciality' value={props.values.speciality}>
-      <option className='form__input' value='' label='Speciality' disabled selected />
+    <select
+      {...props}
+      className='form__input'
+      name='speciality'
+      defaultValue=''
+      value={props.values.speciality}
+    >
+      <option className='form__input' value='' label='Speciality' disabled />
       <option className='form__input' value='cardiology' label='Cardiology' />
       <option className='form__input' value='dermatology' label='Dermatology' />
       <option className='form__input' value='vaccination' label='Vaccination' />
