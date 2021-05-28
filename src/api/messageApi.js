@@ -29,7 +29,7 @@ export async function sendMessage(message) {
 
 export async function destroyMessage(id) {
   try {
-    const response = await axios.get(`${url}/message/destroy`, { id });
+    const response = await axios.post(`${url}/message/destroy`, { id });
     return response.data;
   } catch (error) {
     console.log(error.message);
