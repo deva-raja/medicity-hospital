@@ -1,14 +1,20 @@
 import { useDispatch } from 'react-redux';
-import ModalComponent from './ModalComponent';
-import { getData, openModal } from '../redux/modalSlice';
+import { useHistory } from 'react-router';
+import { changePage } from '../redux/appointmentSlice';
+import { getData } from '../redux/doctorPageSlice';
+import { FaPhoneAlt } from 'react-icons/fa';
 
 function DoctorCardComponent({ img, data }) {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleClick = () => {
-    dispatch(openModal(true));
     dispatch(getData(data));
+    dispatch(changePage({ doctor: false, time: true }));
+    history.push('/appointment');
   };
+
+  console.log({ 'returned data': data });
   return (
     <>
       <div className='card' onClick={() => handleClick()}>
@@ -17,13 +23,18 @@ function DoctorCardComponent({ img, data }) {
         </div>
         <div className='info-wrapper'>
           <div className='card-heading'>
-            <span>Name - {data.name}</span>
-            <div>Email - {data.email}</div>
+            <span className='capitalise name'> {data.name} </span>
+            <span className='uppercase md'> md </span>
+            <div className='capitalise speciality'> {data.speciality}</div>
           </div>
-          <div className='card-body'>Message - {data.message}</div>
+          {data.phoneNumber && (
+            <div className='card-phone'>
+              <FaPhoneAlt className='phone-icon' />
+              <span className='number'>{data.phoneNumber}</span>
+            </div>
+          )}
         </div>
       </div>
-      <ModalComponent />
     </>
   );
 }

@@ -73,6 +73,14 @@
     background-color: $secondary-color;
   }
 }
+.small-button{
+  width: 130px;
+  height: 35px;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-weight: 900;
+  font-size: 15px;
+}
 
 // file styling
 [type='file'] {

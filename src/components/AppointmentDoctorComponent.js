@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import MessageComponent from './MessageComponent';
 import ShowDoctorComponent from './ShowDoctorComponent';
 
 function AppointmentDoctorComponent() {
@@ -10,7 +9,7 @@ function AppointmentDoctorComponent() {
         <h1>Find a doctor</h1>
         <div className='form-wrapper'>
           <input type='text' className='form__input' placeholder='search by doctor name' />
-          <button className='form__button button submit message-button'>search</button>
+          <button className='button  small-button'>search</button>
         </div>
       </div>
       <div className='search-results'>
@@ -24,7 +23,7 @@ function AppointmentDoctorComponent() {
             <option className='form__input' value='cardiology' label='Cardiology' />
             <option className='form__input' value='dermatology' label='Dermatology' />
             <option className='form__input' value='vaccination' label='Vaccination' />
-            <option className='form__input' value='neuorology' label='Neuorology' />
+            <option className='form__input' value='neurology' label='Neurology' />
           </select>
         </div>
         <div className='results'>

@@ -58,7 +58,7 @@ function AddDoctorComponent() {
       <option className='form__input' value='cardiology' label='Cardiology' />
       <option className='form__input' value='dermatology' label='Dermatology' />
       <option className='form__input' value='vaccination' label='Vaccination' />
-      <option className='form__input' value='neuorology' label='Neuorology' />
+      <option className='form__input' value='neurology' label='Neuorology' />
     </Field>
   );
 
@@ -87,11 +87,7 @@ function AddDoctorComponent() {
               <div className='form-error'>{errors.password}</div>
             )}
 
-            <Field
-              name='speciality'
-              values={values}
-              as={CustomInputComponent}
-            />
+            <Field name='speciality' values={values} as={CustomInputComponent} />
             {touched.speciality && errors.speciality && (
               <div className='form-error'>{errors.speciality}</div>
             )}

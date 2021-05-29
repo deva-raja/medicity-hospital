@@ -1,40 +1,35 @@
 import { useEffect, useState } from 'react';
-import Modal from 'react-modal';
-import { getMessage } from '../api/messageApi';
-import CardComponent from './DoctorCardComponent';
+import { showDoctor } from '../api/doctorApi';
 import doctorImg from '../images/doctor_filler.jpg';
-import { useSelector } from 'react-redux';
+import CardComponent from './DoctorCardComponent';
 
-Modal.setAppElement('#root');
 function ShowDoctorComponent() {
-  const [messages, setMessages] = useState([]);
-  const deleteMsg = useSelector((state) => state.modal.delete);
+  const [doctor, setDoctors] = useState([]);
 
   useEffect(() => {
     const fetchMessage = async () => {
-      const data = await getMessage();
+      const data = await showDoctor();
       console.log(data);
-      setMessages(data.message);
+      setDoctors(data.doctor);
     };
     fetchMessage();
 
     return () => {
-      setMessages();
+      setDoctors();
     };
-  }, [deleteMsg]);
-  console.log(messages);
+  }, []);
+  console.log(doctor);
 
   return (
     <div className='container'>
-      
       <div className='card-container'>
-        {messages &&
-          messages.map((message) => (
+        {doctor &&
+          doctor.map((message) => (
             <CardComponent key={message._id} data={message} img={doctorImg} />
           ))}
       </div>
     </div>
   );
 }
- 
+
 export default ShowDoctorComponent;

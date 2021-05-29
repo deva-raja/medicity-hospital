@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const url = 'http://localhost:5000';
 
-export async function getDoctor() {
+export async function showDoctor() {
   try {
     const response = await axios.get(`${url}/doctor/show`);
     return response.data;
@@ -35,8 +35,7 @@ export async function createDoctor(doctor) {
     const data = response.data;
     if (data.doctor) {
       return { data: data.doctor };
-    }
-    if (data.errors) {
+    }    if (data.errors) {
       const error = data.errors.email;
       return { error };
     }
