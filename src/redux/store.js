@@ -5,6 +5,7 @@ import toastReducer from '../redux/toastSlice';
 import loginReducer from '../redux/loginSlice';
 import appointmentReducer from '../redux/appointmentSlice';
 import doctorPageReducer from '../redux/doctorPageSlice';
+import searchReducer from '../redux/searchSlice';
 
 export default configureStore({
   reducer: {
@@ -14,5 +15,6 @@ export default configureStore({
     login: loginReducer,
     appointmentPage: appointmentReducer,
     doctorPage: doctorPageReducer,
+    search: searchReducer,
   },
 });
