@@ -3,31 +3,35 @@
     color: rgb(0, 0, 0);
     grid-row: 2/3;
     grid-column: 1/1;
-    display: grid;
-    grid-template-rows: auto 1fr;
+    h1 {
+      font-size: 38px;
+      line-height: 46px;
+      letter-spacing: -1px;
+    }
   }
-  .sidebar {
-    background: #000000;
+  .container {
+    background-color: #ecf0f3;
+    display: grid;
+    grid-template-rows: minmax(130px, auto) 1fr;
+    width: 100%;
+    height: 100%;
+    padding: 0 5vw;
+    gap: 20px;
+  }
+  .search-wrapper {
     display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .search-results {
+    display: flex;
     flex-wrap: wrap;
-    padding: 20px;
-    cursor: pointer;
-    button {
-      background-color: black;
-      color: white;
-      outline: none;
-      border: 0;
-      font-size: 16px;
-      text-transform: uppercase;
-      cursor: pointer;
-      letter-spacing: 1.5px;
-      font-weight: 900;
-      &:hover {
-        color: $primary-color;
-      }
+    .search {
+      width: 260px !important;
+      flex-shrink: 0;
+    }
+    .results {
     }
   }
 }

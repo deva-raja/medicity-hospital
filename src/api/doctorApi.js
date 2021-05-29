@@ -52,7 +52,7 @@ export async function destroyDoctor(doctor) {
     if (data.doctor) {
       return { data: data.doctor };
     }
-    if (data.errors) {
+     if (data.errors) {
       const error = data.errors;
       return { error };
     }

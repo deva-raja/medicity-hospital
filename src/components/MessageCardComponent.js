@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import ModalComponent from '../components/ModalComponent';
+import ModalComponent from './ModalComponent';
 import { getData, openModal } from '../redux/modalSlice';
 
 function CardComponent({ img, data }) {

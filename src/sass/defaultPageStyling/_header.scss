@@ -34,4 +34,14 @@
       color: $primary-color;
     }
   }
+  .logout {
+    color: $primary-color;
+    position: absolute;
+    left: -90px;
+    font-weight: 900;
+    text-transform: uppercase !important;
+    &:hover{
+      color: white !important;
+    }
+  }
 }

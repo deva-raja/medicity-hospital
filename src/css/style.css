@@ -29,9 +29,7 @@
 }
 
 .landingPage_showcase .logout {
-  position: absolute;
-  right: 30px;
-  color: red;
+  display: none;
 }
 
 .landingPage_showcase header .nav > * {
@@ -446,6 +444,18 @@
   color: #4b70e2;
 }
 
+.defaultPage_showcase .logout {
+  color: #4b70e2;
+  position: absolute;
+  left: -90px;
+  font-weight: 900;
+  text-transform: uppercase !important;
+}
+
+.defaultPage_showcase .logout:hover {
+  color: white !important;
+}
+
 .defaultPage_showcase {
   width: 100vw;
   height: 100vh;
@@ -530,42 +540,54 @@
   grid-row: 2/3;
   -ms-grid-column: 1;
   grid-column: 1/1;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: auto 1fr;
-      grid-template-rows: auto 1fr;
 }
 
-.appointmentPage_showcase .sidebar {
-  background: #000000;
+.appointmentPage_showcase .content h1 {
+  font-size: 38px;
+  line-height: 46px;
+  letter-spacing: -1px;
+}
+
+.appointmentPage_showcase .container {
+  background-color: #ecf0f3;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: minmax(130px, auto) 1fr;
+      grid-template-rows: minmax(130px, auto) 1fr;
+  width: 100%;
+  height: 100%;
+  padding: 0 5vw;
+  gap: 20px;
+}
+
+.appointmentPage_showcase .search-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  padding: 10px;
-  color: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.appointmentPage_showcase .search-results {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 20px;
-  cursor: pointer;
 }
 
-.appointmentPage_showcase .sidebar button {
-  background-color: black;
-  color: white;
-  outline: none;
-  border: 0;
-  font-size: 16px;
-  text-transform: uppercase;
-  cursor: pointer;
-  letter-spacing: 1.5px;
-  font-weight: 900;
-}
-
-.appointmentPage_showcase .sidebar button:hover {
-  color: #4b70e2;
+.appointmentPage_showcase .search-results .search {
+  width: 260px !important;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 html {
@@ -789,6 +811,11 @@ option {
   display: -ms-flexbox;
   display: flex;
   cursor: pointer;
+}
+
+.card .doctor-img {
+  width: 300px;
+  height: 300px;
 }
 
 .card .image-wrapper {

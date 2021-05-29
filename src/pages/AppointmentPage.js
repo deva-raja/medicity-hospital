@@ -1,13 +1,14 @@
 import HeaderComponent from '../components/HeaderComponent';
 import FooterComponent from '../components/FooterComponent';
+import AppointmentDoctorComponent from '../components/AppointmentDoctorComponent';
 
 function AppointmentPage() {
   return (
     <>
-      <div className='contactPage_showcase defaultPage_showcase'>
+      <div className='appointmentPage_showcase defaultPage_showcase'>
         <HeaderComponent />
         <div className='content'>
-            appointment
+          <AppointmentDoctorComponent />
         </div>
         <FooterComponent />
       </div>
