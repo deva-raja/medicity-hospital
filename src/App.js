@@ -7,6 +7,7 @@ import LandingPage from './pages/LandingPage';
 import LocationPage from './pages/LocationPage';
 import LoginPage from './pages/LoginPage';
 import PersonelPage from './pages/PersonelPage';
+import DoctorPage from './pages/DoctorPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/contact' component={ContactPage} />
           <Route path='/appointment' component={AppointmentPage} />
           <Route path='/login' component={LoginPage} />
+          <Route path='/doctor' component={DoctorPage} />
         </Switch>
       </Router>
     </div>

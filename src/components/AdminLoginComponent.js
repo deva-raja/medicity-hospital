@@ -1,9 +1,14 @@
 import { Field, Form, Formik } from 'formik';
 import React, { useState } from 'react';
 import * as Yup from 'yup';
-import { destroyDoctor } from '../api/doctorApi';
+import { loginAdmin } from '../api/adminApi';
+import { useHistory } from 'react-router-dom';
 
+
+// admin@gmail.com
+// admin123 
 function AdminLoginComponent() {
+  const history = useHistory();
   const [serverError, setServerError] = useState();
   const removeDoctorSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
@@ -12,12 +17,12 @@ function AdminLoginComponent() {
 
   const onSubmit = async (values, { setSubmitting, resetForm }) => {
     setSubmitting(true);
-    const data = await destroyDoctor(values);
-    console.log(data);
+    const data = await loginAdmin(values);
 
     if (data.data) {
       setSubmitting(false);
-      return resetForm();
+      resetForm();
+      return history.push('/personel');
     }
 
     if (data.error) {
@@ -60,7 +65,7 @@ function AdminLoginComponent() {
               type='submit'
               className='form__button button submit message-button'
             >
-              remove
+              login
             </button>
           </Form>
         )}

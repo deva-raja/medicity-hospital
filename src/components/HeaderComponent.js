@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { jwtAuthCheck } from '../api/jwtApi';
+import LogoutButtonComponent from './LogoutButtonComponent';
 
 function HeaderComponent() {
   const [page, setPage] = useState('login');
 
   useEffect(() => {
+    const admin = localStorage.getItem('admin') || null;
+    const doctor = localStorage.getItem('doctor') || null;
     const pageLoad = async () => {
-      const response = await jwtAuthCheck();
+      const response = await jwtAuthCheck({ admin, doctor });
       setPage(response);
       console.log(response);
     };
@@ -22,6 +25,8 @@ function HeaderComponent() {
         Medicity
       </Link>
       <div className='nav'>
+        {(page === 'admin' && <LogoutButtonComponent />) ||
+          (page === 'doctor' && <LogoutButtonComponent />)}
         <Link to='/covid'>covid-19</Link>
         {page === 'login' && <Link to='/login'>personel</Link>}
         {page === 'admin' && <Link to='/personel'>personel</Link>}

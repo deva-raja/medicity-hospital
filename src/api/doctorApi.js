@@ -11,19 +11,18 @@ export async function getDoctor() {
   }
 }
 
-export async function loginDoctor() {
+export async function loginDoctor(values) {
   try {
-    const response = await axios.get(`${url}/doctor/login`);
-    return response.data;
-  } catch (error) {
-    console.log(error.message);
-  }
-}
-
-export async function logoutDoctor() {
-  try {
-    const response = await axios.get(`${url}/doctor/logout`);
-    return response.data;
+    const response = await axios.post(`${url}/doctor/login`, values);
+    const data = response.data;
+    if (data.doctor) {
+      localStorage.setItem('doctor', data.token);
+      return { data: data };
+    }
+    if (data.errors) {
+      const error = data.errors;
+      return { error };
+    }
   } catch (error) {
     console.log(error.message);
   }

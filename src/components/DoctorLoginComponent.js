@@ -1,9 +1,11 @@
 import { Field, Form, Formik } from 'formik';
 import React, { useState } from 'react';
 import * as Yup from 'yup';
-import { destroyDoctor } from '../api/doctorApi';
+import { loginDoctor } from '../api/doctorApi';
+import { useHistory } from 'react-router-dom';
 
 function DoctorLoginComponent() {
+  const history = useHistory();
   const [serverError, setServerError] = useState();
   const removeDoctorSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
@@ -12,12 +14,12 @@ function DoctorLoginComponent() {
 
   const onSubmit = async (values, { setSubmitting, resetForm }) => {
     setSubmitting(true);
-    const data = await destroyDoctor(values);
-    console.log(data);
+    const data = await loginDoctor(values);
 
     if (data.data) {
       setSubmitting(false);
-      return resetForm();
+      resetForm();
+      return history.push('/personel');
     }
 
     if (data.error) {
