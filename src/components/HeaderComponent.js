@@ -12,12 +12,12 @@ function HeaderComponent() {
     const pageLoad = async () => {
       const response = await jwtAuthCheck({ admin, doctor });
       setPage(response);
-      console.log(response);
     };
-
+    
     pageLoad();
   }, []);
-
+  
+  console.log({ loginPage: page });
   return (
     <header>
       {/* <Link className='logo animate__animated animated-logo' to='/'> */}

@@ -19,7 +19,7 @@ function DoctorLoginComponent() {
     if (data.data) {
       setSubmitting(false);
       resetForm();
-      return history.push('/personel');
+      return history.push('/doctor');
     }
 
     if (data.error) {
@@ -62,7 +62,7 @@ function DoctorLoginComponent() {
               type='submit'
               className='form__button button submit message-button'
             >
-              remove
+              Login 
             </button>
           </Form>
         )}
