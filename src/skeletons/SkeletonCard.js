@@ -2,7 +2,7 @@ import React from 'react'
 import Shimmer from './Shimmer'
 import SkeletonElement from './SkeletonElement'
 
-const SkeletonProfile = ({ theme }) => {
+const SkeletonCard = ({ theme }) => {
   const themeClass = theme || 'light'
 
   return (
@@ -22,4 +22,4 @@ const SkeletonProfile = ({ theme }) => {
   )
 }
 
-export default SkeletonProfile;
+export default SkeletonCard;

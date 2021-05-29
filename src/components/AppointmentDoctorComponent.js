@@ -37,7 +37,7 @@ function AppointmentDoctorComponent() {
             value={searchSpeciality}
             onChange={(e) => dispatch(changeSpeciality(e.target.value))}
           >
-            <option className='form__input' value='' label='Speciality' disabled />
+            <option className='form__input' value='' label='Select Speciality' disabled />
             <option className='form__input' value='' label='All Specialities' />
             <option className='form__input' value='cardiology' label='Cardiology' />
             <option className='form__input' value='dermatology' label='Dermatology' />

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { showDoctor } from '../api/doctorApi';
 import doctorImg from '../images/doctor_filler.jpg';
 import CardComponent from './DoctorCardComponent';
-import SkeletonProfile from '../skeletons/SkeletonProfile';
+import SkeletonCard from '../skeletons/SkeletonCard';
 
 function ShowDoctorComponent() {
   const [doctor, setDoctors] = useState([]);
@@ -30,7 +30,7 @@ function ShowDoctorComponent() {
   return (
     <div className='container'>
       <div className='card-container'>
-        {loading && [1, 2, 3, 4, 5].map((n) => <SkeletonProfile key={n}  />)}
+        {loading && [1, 2, 3, 4, 5].map((n) => <SkeletonCard key={n}  />)}
         {doctor &&
           doctor.map((message) => (
             <CardComponent key={message._id} data={message} img={doctorImg} />
