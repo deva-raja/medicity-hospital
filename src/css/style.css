@@ -943,6 +943,14 @@ option {
   padding: 16px;
 }
 
+.doctor-modal-card .doctor-modal-heading {
+  margin-bottom: 10px;
+}
+
+.doctor-modal-card div {
+  margin-bottom: 5px;
+}
+
 .toast-info {
   background-color: #4b70e2 !important;
   color: white;

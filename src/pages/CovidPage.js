@@ -1,12 +1,26 @@
 import HeaderComponent from '../components/HeaderComponent';
 import FooterComponent from '../components/FooterComponent';
+import AppointmentDoctorComponent from '../components/AppointmentDoctorComponent';
+import { changeSpeciality } from '../redux/searchSlice';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 function CovidPage() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(changeSpeciality('vaccination'));
+    return () => {
+      dispatch(changeSpeciality(''));
+    };
+  }, [dispatch]);
+
   return (
     <>
-      <div className='covidPage_showcase defaultPage_showcase'>
+      <div className='covidPage_showcase appointmentPage_showcase defaultPage_showcase'>
         <HeaderComponent />
-        <div className='content'>covid shots</div>
+        <div className='content'>
+          <AppointmentDoctorComponent text='Covid Vaccination' />
+        </div>
         <FooterComponent />
       </div>
     </>

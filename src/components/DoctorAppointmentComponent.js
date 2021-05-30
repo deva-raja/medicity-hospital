@@ -12,10 +12,10 @@ function DoctorAppointmentComponent() {
 
   useEffect(() => {
     const fetchMessage = async () => {
-      console.log({ currentDoctorId });
       const data = await getAppointments(currentDoctorId);
       console.log(data);
       setAppointments(data.appointment);
+      console.log(appointments);
     };
     fetchMessage();
 
@@ -24,10 +24,12 @@ function DoctorAppointmentComponent() {
     };
   }, [currentDoctorId]);
 
+  console.log({ testeing: appointments });
   return (
     <div className='container'>
       <div className='message'>
-        <h2 className='title'>appointments</h2>
+        {appointments && appointments.length === 0 && <h2 className='title'>No appointments</h2>}
+        {appointments && appointments.length !== 0 && <h2 className='title'>appointments</h2>}
       </div>
       <div className='card-container'>
         {appointments &&

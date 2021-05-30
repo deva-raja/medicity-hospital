@@ -2,9 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { jwtAuthCheck } from '../api/jwtApi';
 import LogoutButtonComponent from './LogoutButtonComponent';
+import { useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { changePage } from '../redux/appointmentSlice';
 
 function HeaderComponent() {
+  const dispatch = useDispatch();
   const [page, setPage] = useState('login');
+  const location = useLocation();
 
   useEffect(() => {
     const admin = localStorage.getItem('admin') || null;
@@ -13,10 +18,12 @@ function HeaderComponent() {
       const response = await jwtAuthCheck({ admin, doctor });
       setPage(response);
     };
-    
+    if (location.pathname === '/') {
+      dispatch(changePage({ doctor: true, time: false }));
+    }
     pageLoad();
-  }, []);
-  
+  }, [location, dispatch]);
+
   console.log({ loginPage: page });
   return (
     <header>

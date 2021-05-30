@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeName, changeSpeciality, search } from '../redux/searchSlice';
 import ShowDoctorComponent from './ShowDoctorComponent';
 
-function AppointmentDoctorComponent() {
+function AppointmentDoctorComponent({text}) {
   const dispatch = useDispatch();
 
   const searchName = useSelector((state) => state.search.name);
@@ -16,7 +16,7 @@ function AppointmentDoctorComponent() {
   return (
     <div className='container'>
       <div className='search-wrapper'>
-        <h1>Find a doctor</h1>
+        <h1>{text}</h1>
         <div className='form-wrapper'>
           <input
             type='text'

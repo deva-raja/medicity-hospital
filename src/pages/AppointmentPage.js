@@ -14,7 +14,7 @@ function AppointmentPage() {
       <div className='appointmentPage_showcase defaultPage_showcase'>
         <HeaderComponent />
         <div className='content'>
-          {doctor === true && <AppointmentDoctorComponent />}
+          {doctor === true && <AppointmentDoctorComponent text='Find a Doctor' />}
           {time === true && <AppointmentTime />}
         </div>
         <FooterComponent />

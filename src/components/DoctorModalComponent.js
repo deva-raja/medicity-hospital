@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Modal from 'react-modal';
-import { destroyMessage } from '../api/messageApi';
 import { deleteMsg, openModal } from '../redux/modalSlice';
+import { destroyAppointments } from '../api/appointmentApi';
 
 const style = {
   overlay: {
@@ -29,30 +29,32 @@ const style = {
   },
 };
 
-function ModalComponent() {
+function DoctorModalComponent() {
   const dispatch = useDispatch();
   const open = useSelector((state) => state.modal.open);
   const data = useSelector((state) => state.modal.data);
 
   async function handleClick(id) {
-    const deletedMsg = await destroyMessage(id).then(() => {
-      dispatch(deleteMsg());
-      dispatch(openModal(false));
-    });
+    const deletedMsg = await destroyAppointments(id);
     console.log(deletedMsg);
+    dispatch(deleteMsg());
+    dispatch(openModal(false));
   }
 
   return (
     <>
       <Modal style={style} isOpen={open} onRequestClose={() => dispatch(openModal(false))}>
-        <div className='modal-container'>
-          <h1 className='modal-heading'>Patient Information Sheet</h1>
-          <div>From - {data.name}</div>
-          <div className='email'>Email id - {data.email}</div>
-          <div>Respected Hospital Administrator,</div>
-          <div className='card-body'>Message : {data.message}</div>
+        <div className='modal-container doctor-modal-card'>
+          <h1 className='doctor-modal-heading'>Patient Information Sheet</h1>
+          <div>Patient Name - {data.name}</div>
+          <div>Patient age - {data.age}</div>
+          <div>Sex - {data.sex}</div>
+          {data.medical_condition && (
+            <div className='card-body'>Medical Conditions : {data.medical_condition}</div>
+          )}
+          {data.phoneNumber && <div className='card-body'>Phone Number: {data.phoneNumber}</div>}
           <button className='modal-btn' onClick={() => handleClick(data._id)}>
-            delete message
+            checkup complete
           </button>
         </div>
       </Modal>
@@ -60,4 +62,4 @@ function ModalComponent() {
   );
 }
 
-export default ModalComponent;
+export default DoctorModalComponent;

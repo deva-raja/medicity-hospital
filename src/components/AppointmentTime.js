@@ -30,26 +30,22 @@ function AppointmentTime() {
     phoneNumber: '',
   };
 
+
   const onSubmit = async (values, { setSubmitting, resetForm }) => {
     values.doctor_id = doctor_id;
-    console.log(values);
     setSubmitting(true);
     const data = await sendAppointments(values);
 
     if (data.data) {
       setSubmitting(false);
+      dispatch(changePage({ doctor: true, time: false }));
+      history.push('/');
       return resetForm();
     }
 
     if (data.error) {
       return setSubmitting(false);
     }
-  };
-
-  const handleClick = () => {
-    // dispatch(getData(data));
-    dispatch(changePage({ doctor: true, time: false }));
-    history.push('/appointment');
   };
 
   const CustomInputComponent = (props) => (
@@ -103,5 +99,4 @@ function AppointmentTime() {
   );
 }
 
-// <button onClick={() => handleClick()}>change</button>
 export default AppointmentTime;
