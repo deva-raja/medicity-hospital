@@ -6,6 +6,7 @@ import loginReducer from '../redux/loginSlice';
 import appointmentReducer from '../redux/appointmentSlice';
 import doctorPageReducer from '../redux/doctorPageSlice';
 import searchReducer from '../redux/searchSlice';
+import currentDoctorReducer from '../redux/currentDoctorSlice';
 
 export default configureStore({
   reducer: {
@@ -16,5 +17,6 @@ export default configureStore({
     appointmentPage: appointmentReducer,
     doctorPage: doctorPageReducer,
     search: searchReducer,
+    currentDoctor: currentDoctorReducer,
   },
 });

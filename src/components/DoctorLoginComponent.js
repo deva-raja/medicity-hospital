@@ -3,8 +3,12 @@ import React, { useState } from 'react';
 import * as Yup from 'yup';
 import { loginDoctor } from '../api/doctorApi';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setDoctorId } from '../redux/currentDoctorSlice';
 
 function DoctorLoginComponent() {
+  const dispatch = useDispatch();
+
   const history = useHistory();
   const [serverError, setServerError] = useState();
   const removeDoctorSchema = Yup.object().shape({
@@ -15,8 +19,9 @@ function DoctorLoginComponent() {
   const onSubmit = async (values, { setSubmitting, resetForm }) => {
     setSubmitting(true);
     const data = await loginDoctor(values);
-
+    console.log(data);
     if (data.data) {
+      dispatch(setDoctorId(data.data.doctor));
       setSubmitting(false);
       resetForm();
       return history.push('/doctor');
@@ -62,7 +67,7 @@ function DoctorLoginComponent() {
               type='submit'
               className='form__button button submit message-button'
             >
-              Login 
+              Login
             </button>
           </Form>
         )}

@@ -3,6 +3,7 @@ import { useHistory } from 'react-router';
 import { changePage } from '../redux/appointmentSlice';
 import { getData } from '../redux/doctorPageSlice';
 import { FaPhoneAlt } from 'react-icons/fa';
+import { changeName, changeSpeciality } from '../redux/searchSlice';
 
 function DoctorCardComponent({ img, data }) {
   const dispatch = useDispatch();
@@ -11,6 +12,8 @@ function DoctorCardComponent({ img, data }) {
   const handleClick = () => {
     dispatch(getData(data));
     dispatch(changePage({ doctor: false, time: true }));
+    dispatch(changeName(''));
+    dispatch(changeSpeciality(''));
     history.push('/appointment');
   };
 
