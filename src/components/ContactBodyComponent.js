@@ -1,14 +1,13 @@
 import { Field, Form, Formik } from 'formik';
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
 import { sendMessage } from '../api/messageApi';
-import { messageToast } from '../redux/toastSlice';
+import { useDispatch } from 'react-redux';
+import { messageToast, setMessageToastValue } from '../redux/toastSlice';
 
 function ContactBodyComponent() {
   const history = useHistory();
-
   const dispatch = useDispatch();
 
   const [serverError, setServerError] = useState();
@@ -31,6 +30,7 @@ function ContactBodyComponent() {
     if (data.data) {
       setSubmitting(false);
       dispatch(messageToast(true));
+      dispatch(setMessageToastValue('Message sent successfully'));
       return history.push('/');
     }
     if (data.error) {
@@ -80,15 +80,3 @@ function ContactBodyComponent() {
 }
 
 export default ContactBodyComponent;
-
-/* <select className='form__input' required>
-          <option className='form__input' value='' disabled selected>
-          Sex
-          </option>
-          <option className='form__input' value='male'>
-          Male
-          </option>
-          <option className='form__input' value='female'>
-          Female
-          </option>
-        </select> */

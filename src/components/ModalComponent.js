@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Modal from 'react-modal';
 import { destroyMessage } from '../api/messageApi';
 import { deleteMsg, openModal } from '../redux/modalSlice';
+import { messageToast, setMessageToastValue } from '../redux/toastSlice';
 
 const style = {
   overlay: {
@@ -38,6 +39,8 @@ function ModalComponent() {
     const deletedMsg = await destroyMessage(id);
     dispatch(deleteMsg());
     dispatch(openModal(false));
+    dispatch(setMessageToastValue('Message Deleted'));
+    dispatch(messageToast(true));
     console.log(deletedMsg);
   }
 

@@ -1,11 +1,15 @@
-import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Link, useHistory } from 'react-router-dom';
+import { messageToast, setMessageToastValue } from '../redux/toastSlice';
 
 function LogoutButtonComponent() {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const handleLogOut = async () => {
     localStorage.clear();
+    dispatch(messageToast(true));
+    dispatch(setMessageToastValue('Successfully logged out'));
     history.push('/');
   };
 

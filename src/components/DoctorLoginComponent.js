@@ -5,6 +5,7 @@ import { loginDoctor } from '../api/doctorApi';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setDoctorId } from '../redux/currentDoctorSlice';
+import { messageToast, setMessageToastValue } from '../redux/toastSlice';
 
 function DoctorLoginComponent() {
   const dispatch = useDispatch();
@@ -22,6 +23,8 @@ function DoctorLoginComponent() {
     console.log(data);
     if (data.data) {
       dispatch(setDoctorId(data.data.doctor));
+      dispatch(messageToast(true));
+      dispatch(setMessageToastValue('Doctor login successfull'));
       setSubmitting(false);
       resetForm();
       return history.push('/doctor');

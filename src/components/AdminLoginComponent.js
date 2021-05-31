@@ -3,12 +3,14 @@ import React, { useState } from 'react';
 import * as Yup from 'yup';
 import { loginAdmin } from '../api/adminApi';
 import { useHistory } from 'react-router-dom';
-
+import { messageToast, setMessageToastValue } from '../redux/toastSlice';
+import { useDispatch } from 'react-redux';
 
 // admin@gmail.com
-// admin123 
+// admin123
 function AdminLoginComponent() {
   const history = useHistory();
+  const dispatch = useDispatch();
   const [serverError, setServerError] = useState();
   const removeDoctorSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
@@ -21,6 +23,8 @@ function AdminLoginComponent() {
 
     if (data.data) {
       setSubmitting(false);
+      dispatch(messageToast(true));
+      dispatch(setMessageToastValue('Admin login successfull'));
       resetForm();
       return history.push('/personel');
     }

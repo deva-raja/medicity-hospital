@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   message: false,
+  messageValue: '',
 };
 
 export const toastSlice = createSlice({
@@ -11,9 +12,12 @@ export const toastSlice = createSlice({
     messageToast: (state, action) => {
       state.message = action.payload;
     },
+    setMessageToastValue: (state, action) => {
+      state.messageValue = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { messageToast } = toastSlice.actions;
+export const { messageToast, setMessageToastValue } = toastSlice.actions;
 export default toastSlice.reducer;

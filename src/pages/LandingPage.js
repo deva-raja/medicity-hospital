@@ -9,15 +9,16 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function LadingPage() {
   const messageSent = useSelector((state) => state.toast.message);
+  const messageValue = useSelector((state) => state.toast.messageValue);
   const dispatch = useDispatch();
 
   useEffect(() => {
     const openToast = () => {
-      toast('Message sent successfully', { autoClose: 2500, hideProgressBar: true });
+      toast(messageValue, { autoClose: 2500, hideProgressBar: true });
     };
     messageSent && openToast();
     dispatch(messageToast(false));
-  }, [messageSent, dispatch]);
+  }, [messageSent, dispatch, messageValue]);
 
   return (
     <div className='landingPage_showcase'>

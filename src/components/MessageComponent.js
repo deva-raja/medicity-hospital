@@ -17,7 +17,7 @@ function MessageComponent() {
       setMessages(data.message);
     };
     fetchMessage();
- 
+
     return () => {
       setMessages();
     };

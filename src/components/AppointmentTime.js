@@ -13,6 +13,7 @@ import { ToastContainer } from 'react-toastify';
 import * as Yup from 'yup';
 import { sendAppointments } from '../api/appointmentApi';
 import { changePage } from '../redux/appointmentSlice';
+import { messageToast, setMessageToastValue } from '../redux/toastSlice';
 
 function AppointmentTime() {
   const doctor_id = useSelector((state) => state.doctorPage.data._id);
@@ -38,7 +39,7 @@ function AppointmentTime() {
   const nextDay = new Date(today.getTime() + 24 * 60 * 60 * 1000);
   const initialValues = {
     name: '',
-    age: null,
+    age: '',
     sex: '',
     conditions: '',
     date: nextDay,
@@ -48,6 +49,7 @@ function AppointmentTime() {
   const onSubmit = async (values, { setSubmitting, resetForm }) => {
     values.doctor_id = doctor_id;
     setSubmitting(true);
+
     // full date to what we need
     const newDate = format(new Date(values.date), 'do MMMM y');
     const newTime = format(new Date(values.time), 'h:m a');
@@ -60,8 +62,10 @@ function AppointmentTime() {
     if (data.data) {
       setSubmitting(false);
       dispatch(changePage({ doctor: true, time: false }));
-      history.push('/');
-      return resetForm();
+      dispatch(messageToast(true));
+      dispatch(setMessageToastValue('Appointment booking successfull'));
+      resetForm();
+      return history.push('/');
     }
 
     if (data.error) {
