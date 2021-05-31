@@ -35,24 +35,25 @@ function DoctorModalComponent() {
   const data = useSelector((state) => state.modal.data);
 
   async function handleClick(id) {
-    const deletedMsg = await destroyAppointments(id);
-    console.log(deletedMsg);
+    await destroyAppointments(id);
     dispatch(deleteMsg());
     dispatch(openModal(false));
   }
 
+  console.log(data);
   return (
     <>
       <Modal style={style} isOpen={open} onRequestClose={() => dispatch(openModal(false))}>
         <div className='modal-container doctor-modal-card'>
           <h1 className='doctor-modal-heading'>Patient Information Sheet</h1>
           <div>Patient Name - {data.name}</div>
-          <div>Patient age - {data.age}</div>
+          <div>age - {data.age}</div>
           <div>Sex - {data.sex}</div>
-          {data.medical_condition && (
-            <div className='card-body'>Medical Conditions : {data.medical_condition}</div>
+          <div>Appointment date - {data.date}</div>
+          <div>Appointment time - {data.time}</div>
+          {data.conditions && (
+            <div className='card-body'>Medical Conditions - {data.conditions}</div>
           )}
-          {data.phoneNumber && <div className='card-body'>Phone Number: {data.phoneNumber}</div>}
           <button className='modal-btn' onClick={() => handleClick(data._id)}>
             checkup complete
           </button>

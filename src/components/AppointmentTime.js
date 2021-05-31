@@ -149,7 +149,7 @@ function AppointmentTime() {
               type='submit'
               className='form__button button submit message-button'
             >
-              add
+              send 
             </button>
           </Form>
         )}

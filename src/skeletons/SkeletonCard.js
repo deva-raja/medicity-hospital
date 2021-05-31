@@ -2,7 +2,7 @@ import React from 'react'
 import Shimmer from './Shimmer'
 import SkeletonElement from './SkeletonElement'
 
-const SkeletonCard = ({ theme }) => {
+const SkeletonCard = ({ theme,avatar }) => {
   const themeClass = theme || 'light'
 
   return (

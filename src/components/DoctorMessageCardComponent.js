@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import ModalComponent from './DoctorModalComponent';
 import { getData, openModal } from '../redux/modalSlice';
 
+
 function CardComponent({ img, data }) {
   const dispatch = useDispatch();
 
@@ -21,6 +22,7 @@ function CardComponent({ img, data }) {
             <span>Name - {data.name}</span>
             <div>Age - {data.age}</div>
             <div>Sex - {data.sex}</div>
+            <div>Appointment on - {data.date}</div>
           </div>
         </div>
       </div>

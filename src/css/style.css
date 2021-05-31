@@ -1016,6 +1016,12 @@ option {
   height: 300px;
 }
 
+.skeleton.avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
 .skeleton-wrapper {
   border-radius: 4px;
   position: relative;
@@ -1058,6 +1064,16 @@ option {
           transform: skewX(-20deg);
   -webkit-box-shadow: 0 0 30px 30px rgba(255, 255, 255, 0.2);
           box-shadow: 0 0 30px 30px rgba(255, 255, 255, 0.2);
+}
+
+.round-skeleton {
+  -ms-grid-columns: auto 1fr !important;
+      grid-template-columns: auto 1fr !important;
+  padding: 10px;
+}
+
+.round-skeleton .round-spacing {
+  margin-top: 25px;
 }
 
 @-webkit-keyframes loading {
