@@ -35,13 +35,13 @@
     }
   }
   .logout {
-    display: none !important;
+    display: none;
     color: $primary-color;
     position: absolute;
     left: -90px;
     font-weight: 900;
     text-transform: uppercase !important;
-    &:hover{
+    &:hover {
       color: white !important;
     }
   }
