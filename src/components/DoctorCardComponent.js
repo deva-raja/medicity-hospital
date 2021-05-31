@@ -17,7 +17,6 @@ function DoctorCardComponent({ img, data }) {
     history.push('/appointment');
   };
 
-  console.log({ 'returned data': data });
   return (
     <>
       <div className='card' onClick={() => handleClick()}>

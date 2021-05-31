@@ -25,7 +25,6 @@ function ShowDoctorComponent() {
       setDoctors();
     };
   }, [shouldSearch, searchSpeciality]);
-  console.log(doctor);
 
   return (
     <div className='container'>

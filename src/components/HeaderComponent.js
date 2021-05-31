@@ -18,13 +18,13 @@ function HeaderComponent() {
       const response = await jwtAuthCheck({ admin, doctor });
       setPage(response);
     };
+    console.log({ 'location': location.pathname });
     if (location.pathname === '/') {
       dispatch(changePage({ doctor: true, time: false }));
     }
     pageLoad();
   }, [location, dispatch]);
 
-  console.log({ loginPage: page });
   return (
     <header>
       {/* <Link className='logo animate__animated animated-logo' to='/'> */}

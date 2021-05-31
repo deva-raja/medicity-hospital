@@ -9,7 +9,7 @@ function CardComponent({ img, data }) {
     dispatch(openModal(true));
     dispatch(getData(data));
   };
-  console.log(data);
+  
   return (
     <>
       <div className='card' onClick={() => handleClick()}>

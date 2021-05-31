@@ -35,6 +35,7 @@
     }
   }
   .logout {
+    display: none !important;
     color: $primary-color;
     position: absolute;
     left: -90px;

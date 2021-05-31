@@ -6,7 +6,7 @@ import DoctorAppointmentComponent from '../components/DoctorAppointmentComponent
 function DoctorPage() {
   return (
     <>
-      <div className='covidPage_showcase defaultPage_showcase'>
+      <div className='doctorPage_showcase defaultPage_showcase'>
         <HeaderComponent />
         <div className='content'>
           <DoctorAppointmentComponent />

@@ -5,7 +5,7 @@ import ContactBodyComponent from '../components/ContactBodyComponent';
 function ContactPage() {
   return (
     <>
-      <div className='appointmentPage_showcase defaultPage_showcase'>
+      <div className='contactPage_showcase defaultPage_showcase'>
         <HeaderComponent />
         <div className='content'>
           <ContactBodyComponent />
