@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000';
+const url = 'https://medicity-server.herokuapp.com';
 
 export async function jwtAuthCheck(localStorageJwt) {
   try {

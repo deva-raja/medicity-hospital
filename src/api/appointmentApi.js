@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000';
+const url = 'https://medicity-server.herokuapp.com';
 
 // here appointment will have an object with the doctor id
 export async function getAppointments(id) {
