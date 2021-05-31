@@ -35,10 +35,9 @@ function ModalComponent() {
   const data = useSelector((state) => state.modal.data);
 
   async function handleClick(id) {
-    const deletedMsg = await destroyMessage(id).then(() => {
-      dispatch(deleteMsg());
-      dispatch(openModal(false));
-    });
+    const deletedMsg = await destroyMessage(id);
+    dispatch(deleteMsg());
+    dispatch(openModal(false));
     console.log(deletedMsg);
   }
 
