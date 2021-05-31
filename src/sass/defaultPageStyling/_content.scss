@@ -7,4 +7,11 @@
   .form-error {
     color: $error;
   }
+  .login-info {
+    margin-top: 20px;
+    color: $primary-color;
+     div{
+    margin-top: 2px;
+    }
+  }
 }

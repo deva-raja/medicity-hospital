@@ -71,6 +71,9 @@ function AdminLoginComponent() {
             >
               login
             </button>
+            <div className='login-info'>
+              <div>Try email:admin@gmail.com password:admin123</div>
+            </div>
           </Form>
         )}
       </Formik>

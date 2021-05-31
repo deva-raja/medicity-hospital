@@ -52,11 +52,10 @@ function AppointmentTime() {
 
     // full date to what we need
     const newDate = format(new Date(values.date), 'do MMMM y');
-    const newTime = format(new Date(values.time), 'h:m a');
+    const newTime = format(new Date(values.time), 'h:mm a');
     const newValues = values;
     newValues.date = newDate;
     newValues.time = newTime;
-    console.log({ newValues });
     const data = await sendAppointments(newValues);
 
     if (data.data) {

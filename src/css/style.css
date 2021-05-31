@@ -539,6 +539,15 @@
   color: #f13c20;
 }
 
+.defaultPage_showcase .login-info {
+  margin-top: 20px;
+  color: #4b70e2;
+}
+
+.defaultPage_showcase .login-info div {
+  margin-top: 2px;
+}
+
 .appointmentPage_showcase .content {
   color: black;
   -ms-grid-row: 2;

@@ -72,6 +72,10 @@ function DoctorLoginComponent() {
             >
               Login
             </button>
+            <div className='login-info'>
+              <div>For all doctors, email:name@gmail.com password:name123</div>
+              <div>Try email:vinu@gmail.com password:vinu123</div>
+            </div>
           </Form>
         )}
       </Formik>
