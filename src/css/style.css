@@ -626,55 +626,6 @@ html {
   margin: 0;
 }
 
-.animation {
-  display: inline-block;
-  -webkit-animation: fadeIn;
-          animation: fadeIn;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-}
-
-.fade-item-1 {
-  -webkit-animation-delay: 0.285714s;
-          animation-delay: 0.285714s;
-}
-
-.fade-item-2 {
-  -webkit-animation-delay: 0.671429s;
-          animation-delay: 0.671429s;
-}
-
-.fade-item-3 {
-  -webkit-animation-delay: 1.157143s;
-          animation-delay: 1.157143s;
-}
-
-.fade-item-4 {
-  -webkit-animation-delay: 1.84286s;
-          animation-delay: 1.84286s;
-}
-
-.fade-item-5 {
-  -webkit-animation-delay: 2.22857s;
-          animation-delay: 2.22857s;
-}
-
-.fade-item-6 {
-  -webkit-animation-delay: 2.61429s;
-          animation-delay: 2.61429s;
-}
-
-.fade-item-7 {
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
-}
-
-.animated-logo {
-  display: inline-block;
-  -webkit-animation: fadeIn;
-          animation: fadeIn;
-}
-
 .container {
   background-color: #ecf0f3;
   display: -webkit-box;
