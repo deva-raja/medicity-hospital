@@ -10,6 +10,8 @@ View online - [medicity](https://medicity-5b5.pages.dev/)
 
 To view the backendcode - [server](https://github.com/deva-raja/medicity-hospital-server)
 
+<img src='src/images/demo.png'>
+
 ## Technologies and Packages Used
 
 ### For video
