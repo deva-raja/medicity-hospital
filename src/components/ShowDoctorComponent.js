@@ -29,11 +29,12 @@ function ShowDoctorComponent() {
   return (
     <div className='container'>
       <div className='card-container'>
-        {loading && [1, 2, 3, 4, 5].map((n) => <SkeletonCard key={n}  />)}
+        {loading && [1, 2, 3, 4, 5].map((n) => <SkeletonCard key={n} />)}
         {doctor &&
           doctor.map((message) => (
             <CardComponent key={message._id} data={message} img={doctorImg} />
           ))}
+        {doctor && doctor.length === 0 && <div className='not-found'>No doctor found</div>}
       </div>
     </div>
   );

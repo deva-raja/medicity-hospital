@@ -1,14 +1,16 @@
 import HeaderComponent from '../components/HeaderComponent';
 import FooterComponent from '../components/FooterComponent';
 import AppointmentDoctorComponent from '../components/AppointmentDoctorComponent';
-import { changeSpeciality } from '../redux/searchSlice';
+import { changeSpeciality, changeName, search } from '../redux/searchSlice';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 function CovidPage() {
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(changeName(''));
     dispatch(changeSpeciality('vaccination'));
+    dispatch(search());
     return () => {
       dispatch(changeSpeciality(''));
     };

@@ -545,6 +545,12 @@
   margin-top: 2px;
 }
 
+.defaultPage_showcase .not-found {
+  position: relative;
+  left: 100%;
+  top: 10%;
+}
+
 .appointmentPage_showcase .content {
   color: black;
   -ms-grid-row: 2;
