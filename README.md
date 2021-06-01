@@ -1,6 +1,6 @@
 # Medicity-Hospital-App
 
-MERN stack Hospital App
+MERN stack Hospital App with jwt authentication
 
 ## Live Website
 

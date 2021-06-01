@@ -7,7 +7,6 @@ export async function loginAdmin(values) {
     const response = await axios.post(`${url}/admin/login`, values);
     const data = response.data;
     if (data.admin) {
-      console.log(data);
       localStorage.setItem('admin', data.token);
       return { data: data };
     }

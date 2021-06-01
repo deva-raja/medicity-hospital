@@ -40,7 +40,6 @@ function DoctorModalComponent() {
     dispatch(openModal(false));
   }
 
-  console.log(data);
   return (
     <>
       <Modal style={style} isOpen={open} onRequestClose={() => dispatch(openModal(false))}>

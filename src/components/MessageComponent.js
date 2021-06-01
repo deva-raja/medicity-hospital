@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import { getMessage } from '../api/messageApi';
 import CardComponent from './MessageCardComponent';
-import patientImg from '../images/patient_filler.jpg';
+import patientImg from '../images/message.png';
 import { useSelector } from 'react-redux';
 import RoundSkeletonCard from '../skeletons/SkeletonRoundCard';
 

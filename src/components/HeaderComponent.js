@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Link, useLocation } from 'react-router-dom';
 import { jwtAuthCheck } from '../api/jwtApi';
-import LogoutButtonComponent from './LogoutButtonComponent';
-import { useLocation } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import { changePage } from '../redux/appointmentSlice';
+import LogoutButtonComponent from './LogoutButtonComponent';
 
 function HeaderComponent() {
   const dispatch = useDispatch();
@@ -18,7 +17,6 @@ function HeaderComponent() {
       const response = await jwtAuthCheck({ admin, doctor });
       setPage(response);
     };
-    console.log({ 'location': location.pathname });
     if (location.pathname === '/') {
       dispatch(changePage({ doctor: true, time: false }));
     }

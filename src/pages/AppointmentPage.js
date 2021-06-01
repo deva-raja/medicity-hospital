@@ -2,12 +2,11 @@ import HeaderComponent from '../components/HeaderComponent';
 import FooterComponent from '../components/FooterComponent';
 import AppointmentDoctorComponent from '../components/AppointmentDoctorComponent';
 import AppointmentTime from '../components/AppointmentTime';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch} from 'react-redux';
 
 function AppointmentPage() {
   const appointmentPage = useSelector((state) => state.appointmentPage);
   const { doctor, time } = appointmentPage;
-  console.log(appointmentPage);
 
   return (
     <>

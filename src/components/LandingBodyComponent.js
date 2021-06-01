@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import video from '../videos/hospital_bg.mp4';
-import img from '../images/doctor_child.png';
 import { useSpring, animated } from 'react-spring';
 
 function LandingBodyComponent() {
@@ -50,8 +49,7 @@ function LandingBodyComponent() {
 
   return (
     <>
-      {/* <img className='bg-video' src={img} alt='doctor_child' /> */}
-      <video class='bg-video' src={video} autoPlay loop muted></video>
+      <video className='bg-video' src={video} autoPlay loop muted></video>
       <div className='content'>
         <div className='content-wrapper'>
           <h2>
