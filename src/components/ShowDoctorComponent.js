@@ -29,7 +29,8 @@ function ShowDoctorComponent() {
   return (
     <div className='container'>
       <div className='card-container'>
-        {loading && [1, 2, 3, 4, 5].map((n) => <SkeletonCard key={n}  />)}
+        {/* {loading && [1, 2, 3, 4, 5].map((n) => <SkeletonCard key={n}  />)} */}
+        <SkeletonCard />
         {doctor &&
           doctor.map((message) => (
             <CardComponent key={message._id} data={message} img={doctorImg} />

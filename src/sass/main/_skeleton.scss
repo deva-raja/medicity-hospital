@@ -15,8 +15,8 @@
   margin-bottom: 15px;
 }
 .skeleton.thumbnail {
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
 }
 .skeleton.avatar {
   width: 250px;
@@ -34,7 +34,6 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-gap: 40px;
-  align-items: first baseline;
 }
 
 /* themes */

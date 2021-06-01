@@ -25,7 +25,6 @@ function HeaderComponent() {
 
   return (
     <header>
-      {/* <Link className='logo animate__animated animated-logo' to='/'> */}
       <Link className='logo' to='/'>
         Medicity
       </Link>

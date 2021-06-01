@@ -26,6 +26,7 @@
   display: -ms-flexbox;
   display: flex;
   min-width: 300px;
+  z-index: 999;
 }
 
 .landingPage_showcase .logout {
@@ -563,6 +564,7 @@
   padding: 10px 100px;
   position: relative;
   top: 25px;
+  margin-bottom: 40px;
 }
 
 .appointmentPage_showcase .container {
@@ -602,7 +604,7 @@
 }
 
 .appointmentPage_showcase .search-results .search {
-  width: 260px !important;
+  width: 250px !important;
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
@@ -968,8 +970,8 @@ option {
 }
 
 .skeleton.thumbnail {
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
 }
 
 .skeleton.avatar {
@@ -991,9 +993,6 @@ option {
   -ms-grid-columns: 1fr 2fr;
       grid-template-columns: 1fr 2fr;
   grid-gap: 40px;
-  -webkit-box-align: first baseline;
-      -ms-flex-align: first baseline;
-          align-items: first baseline;
 }
 
 /* themes */
