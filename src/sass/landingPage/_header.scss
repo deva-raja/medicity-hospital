@@ -45,4 +45,10 @@
   .logo:hover {
     color: black;
   }
+
+  @media (max-height: 700px) {
+    header {
+      padding: 40px 70px;
+    }
+  }
 }

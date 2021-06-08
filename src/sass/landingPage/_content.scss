@@ -62,4 +62,17 @@
       color: white;
     }
   }
+
+  @media (max-height: 700px) {
+  .content {
+    padding: 40px 70px;
+    font-size: 15px;
+  }
+  }
+  @media (max-height: 620px) {
+  .content {
+    padding: 40px 70px;
+    font-size: 14px;
+  }
+  }
 }

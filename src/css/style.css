@@ -63,6 +63,12 @@
   color: black;
 }
 
+@media (max-height: 700px) {
+  .landingPage_showcase header {
+    padding: 40px 70px;
+  }
+}
+
 /* body styling */
 .landingPage_showcase {
   width: 100vw;
@@ -165,6 +171,20 @@
 .landingPage_showcase .content a:hover {
   background: #000;
   color: white;
+}
+
+@media (max-height: 700px) {
+  .landingPage_showcase .content {
+    padding: 40px 70px;
+    font-size: 15px;
+  }
+}
+
+@media (max-height: 620px) {
+  .landingPage_showcase .content {
+    padding: 40px 70px;
+    font-size: 14px;
+  }
 }
 
 /* footer styling */
