@@ -10,6 +10,10 @@ View online - [medicity](https://medicity-5b5.pages.dev/)
 
 To view the backendcode - [server](https://github.com/deva-raja/medicity-hospital-server)
 
+## Jwt token
+
+To view the token, go to storage < localStorage in firefox and application < localStorage in google chrome
+
 ## Preview
 
 <img src='src/images/demo.png'>
